@@ -5,7 +5,7 @@ Building scalable applications, instead, requires a different approach. Have you
 
 Let's make a practical exercise applying Domain Driven Design. Our goal is to create a boilerplate to be used universally as base of any Laravel project. Take advantage of the framework power at the same time we meet complex business requirements.
 
-# Documentation
+## Documentation
 You'll find instructions and full documentation on [HiBit](https://www.hibit.dev/posts/43/domain-driven-design-with-laravel-9).
 
 ## Credits
