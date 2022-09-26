@@ -1,27 +1,21 @@
 <?php
 
-namespace App\Infrastructure\Laravel\Providers;
+namespace App\Infrastructure\Laravel\Provider;
+
+use App\Domain;
+use App\Infrastructure;
 
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
 {
-    /**
-     * Register any application services.
-     *
-     * @return void
-     */
-    public function register()
+    public function register(): void
     {
-        //$this->app->bind(Interface::class, Implementation::class);
+        // Repositories
+        $this->app->bind(Domain\User\UserRepository::class, Infrastructure\User\UserRepository::class);
     }
 
-    /**
-     * Bootstrap any application services.
-     *
-     * @return void
-     */
-    public function boot()
+    public function boot(): void
     {
         //
     }

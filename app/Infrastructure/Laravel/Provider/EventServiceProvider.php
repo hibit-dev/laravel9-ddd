@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Infrastructure\Laravel\Providers;
+namespace App\Infrastructure\Laravel\Provider;
 
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;

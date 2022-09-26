@@ -2,7 +2,7 @@
 
 namespace App\Infrastructure\Laravel\Middleware;
 
-use App\Infrastructure\Laravel\Providers\RouteServiceProvider;
+use App\Infrastructure\Laravel\Provider\RouteServiceProvider;
 use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;

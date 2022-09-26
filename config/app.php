@@ -15,7 +15,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Laravel'),
+    'name' => env('APP_NAME', 'HiBit'),
 
     /*
     |--------------------------------------------------------------------------
@@ -189,11 +189,11 @@ return [
         /*
          * Application Service Providers...
          */
-        App\Infrastructure\Laravel\Providers\AppServiceProvider::class,
-        App\Infrastructure\Laravel\Providers\AuthServiceProvider::class,
+        App\Infrastructure\Laravel\Provider\AppServiceProvider::class,
+        App\Infrastructure\Laravel\Provider\AuthServiceProvider::class,
         // App\Providers\BroadcastServiceProvider::class,
-        App\Infrastructure\Laravel\Providers\EventServiceProvider::class,
-        App\Infrastructure\Laravel\Providers\RouteServiceProvider::class,
+        App\Infrastructure\Laravel\Provider\EventServiceProvider::class,
+        App\Infrastructure\Laravel\Provider\RouteServiceProvider::class,
 
     ],
 

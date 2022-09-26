@@ -38,7 +38,7 @@ $app->singleton(
 
 $app->singleton(
     Illuminate\Contracts\Debug\ExceptionHandler::class,
-    App\Infrastructure\Laravel\Exceptions\Handler::class
+    App\Infrastructure\Laravel\Exception\Handler::class
 );
 
 /*
