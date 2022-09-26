@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Domain\Shared\ValueObject;
 
-abstract class StringValueObject
+class StringValueObject
 {
     protected string $value;
 
@@ -18,9 +18,19 @@ abstract class StringValueObject
         return $this->value();
     }
 
+    public static function fromString(string $value): static
+    {
+        return new static($value);
+    }
+
     public function value(): string
     {
         return $this->value;
+    }
+
+    public function equals(StringValueObject $otherString): bool
+    {
+        return $this->value === $otherString->value;
     }
 
     public function empty(): bool

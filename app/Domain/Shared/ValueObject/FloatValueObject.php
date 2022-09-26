@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Domain\Shared\ValueObject;
 
-abstract class FloatValueObject
+class FloatValueObject
 {
     protected float $value;
 
@@ -18,6 +18,11 @@ abstract class FloatValueObject
     public function __toString()
     {
         return (string) $this->value();
+    }
+
+    public static function fromFloat(float $value): static
+    {
+        return new static($value);
     }
 
     public function value(): float
