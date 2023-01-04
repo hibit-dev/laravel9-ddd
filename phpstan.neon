@@ -1,0 +1,18 @@
+parameters:
+    paths:
+    	- app
+    level: 7
+    inferPrivatePropertyTypeFromConstructor: true
+    checkMissingIterableValueType: false
+    checkGenericClassInNonGenericObjectType: false
+    excludePaths:
+        - %currentWorkingDirectory%/app/Infrastructure/Laravel/*
+    ignoreErrors:
+        #- '#(.*)should return Illuminate\\Http\\RedirectResponse but returns Illuminate\\Http\\RedirectResponse|Illuminate\\Routing\\Redirector#'
+        #- '#Access to an undefined property (.*)\\FormRequest\\(.*)::\$.*#'
+        - '#Access to an undefined property (.*)Model::\$.*#'
+        - '#Call to an undefined method (.*)Model::\.*#'
+        - '#Call to an undefined static method (.*)Model::\.*#'
+        - '#Call to an undefined method Illuminate\\(.*)::\.*#'
+        #- '#Call to an undefined static method Illuminate\\(.*)::\.*#'
+        - '#Unsafe usage of new static(.*)#'

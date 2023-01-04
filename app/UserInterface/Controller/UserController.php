@@ -23,10 +23,14 @@ class UserController extends Controller
 {
     public function index(Request $request, UserRepository $userRepository): JsonResponse
     {
+        $offset = $request->query('offset');
+        $email = $request->query('email');
+        $name = $request->query('name');
+
         $criteria = UserSearchCriteria::create(
-            $request->query('offset'),
-            $request->query('email'),
-            $request->query('name'),
+            !empty($offset) && !is_array($offset) ? (int) $offset : null,
+            !empty($email) && !is_array($email) ? $email : null,
+            !empty($name) && !is_array($name) ? $name : null,
         );
 
         $criteria->sortBy(new CriteriaSort(CriteriaField::fromString('name'), CriteriaSortDirection::ASC));
