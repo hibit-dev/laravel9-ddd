@@ -2,7 +2,13 @@
 
 namespace App\Infrastructure\Laravel\Exception;
 
+use App\Domain\Shared\Exception\DomainException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use Illuminate\Http\Exceptions\ThrottleRequestsException;
+use Illuminate\Http\Request;
+use Illuminate\Session\TokenMismatchException;
+use Illuminate\Validation\ValidationException;
+use Symfony\Component\HttpFoundation\Response;
 use Throwable;
 
 class Handler extends ExceptionHandler
@@ -36,15 +42,36 @@ class Handler extends ExceptionHandler
         'password_confirmation',
     ];
 
-    /**
-     * Register the exception handling callbacks for the application.
-     *
-     * @return void
-     */
-    public function register()
+    public function render($request, Throwable $e): Response
     {
-        $this->reportable(function (Throwable $e) {
-            //
-        });
+        if ($request->is('api/*')) {
+            $httpCode = $e instanceof ValidationException ? Response::HTTP_BAD_REQUEST : $e->getStatusCode();
+
+            return response()->json([
+                'date' => date('Y-m-d H:i:s'),
+            ], $httpCode);
+        }
+
+        if ($e instanceof TokenMismatchException) {
+            return redirect()->back()
+                ->withInput()
+                ->withErrors(['Oops! Seems you could not submit form for a long time.']);
+        }
+
+        if ($e instanceof DomainException) {
+            return redirect()->back()
+                ->withInput()
+                ->withErrors([$e->getMessage()]);
+        }
+
+        if ($e instanceof ThrottleRequestsException) {
+            if ($request->method() !== Request::METHOD_GET) {
+                return redirect()->back()
+                    ->withInput()
+                    ->withErrors(['Too many requests. Please try again later.']);
+            }
+        }
+
+        return parent::render($request, $e);
     }
 }
