@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace App\Domain\User;
 
-use App\Domain\Shared\Model\Criteria;
-use App\Domain\Shared\Model\CriteriaPagination;
+use Hibit\Criteria;
+use Hibit\CriteriaPagination;
 
 final class UserSearchCriteria extends Criteria
 {

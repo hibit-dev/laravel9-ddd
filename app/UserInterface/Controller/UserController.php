@@ -2,9 +2,6 @@
 
 namespace App\UserInterface\Controller;
 
-use App\Domain\Shared\Model\CriteriaField;
-use App\Domain\Shared\Model\CriteriaSort;
-use App\Domain\Shared\Model\CriteriaSortDirection;
 use App\Domain\Shared\ValueObject\DateTimeValueObject;
 
 use App\Domain\User\Aggregate\User;
@@ -15,6 +12,9 @@ use App\Domain\User\ValueObject\Email;
 use App\Domain\User\ValueObject\Name;
 
 use App\Infrastructure\Laravel\Controller;
+
+use Hibit\CriteriaSort;
+use Hibit\CriteriaSortDirection;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\JsonResponse;
@@ -33,7 +33,7 @@ class UserController extends Controller
             !empty($name) && !is_array($name) ? $name : null,
         );
 
-        $criteria->sortBy(new CriteriaSort(CriteriaField::fromString('name'), CriteriaSortDirection::ASC));
+        $criteria->sortBy(CriteriaSort::create('name', CriteriaSortDirection::ASC));
 
         $users = $userRepository->searchByCriteria($criteria);
 
