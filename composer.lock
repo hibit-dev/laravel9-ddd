@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c6c2f1176be2ec364a8a903eb4435dfa",
+    "content-hash": "7724ba0963e838e50d79359f7762d0bb",
     "packages": [
         {
             "name": "brick/math",
@@ -896,6 +896,59 @@
                 }
             ],
             "time": "2022-08-28T14:45:39+00:00"
+        },
+        {
+            "name": "hibit-dev/criteria",
+            "version": "v1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/hibit-dev/criteria.git",
+                "reference": "1700aa90ca75dcdde0e210acadd63b7004a36bbd"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/hibit-dev/criteria/zipball/1700aa90ca75dcdde0e210acadd63b7004a36bbd",
+                "reference": "1700aa90ca75dcdde0e210acadd63b7004a36bbd",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=8.1"
+            },
+            "require-dev": {
+                "phpstan/phpstan": "^1.10"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Hibit\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Tigran Mekinyan",
+                    "email": "tmekinyan@mail.ru"
+                }
+            ],
+            "description": "A comprehensive package for managing criteria pattern in PHP projects, streamlining data filtering, sorting, and pagination with ease.",
+            "homepage": "https://www.hibit.dev",
+            "keywords": [
+                "IP",
+                "country",
+                "detection",
+                "geo",
+                "laravel",
+                "location",
+                "symfony"
+            ],
+            "support": {
+                "issues": "https://github.com/hibit-dev/criteria/issues",
+                "source": "https://github.com/hibit-dev/criteria/tree/v1.1.0"
+            },
+            "time": "2023-09-25T11:11:28+00:00"
         },
         {
             "name": "laravel/framework",
