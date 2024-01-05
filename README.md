@@ -18,7 +18,9 @@ Additional information about this repository can be found here:
 If you discover any security related issues, please email security@hibit.dev instead of using the issue tracker.
 
 ## About HiBit
-HiBit is a platform made by and for enthusiasts of the IT world. [On our website](https://www.hibit.dev) you can read and comment on technical articles, tutorials, news ... and everything that may interest you in the computing world.
+[HiBit](https://www.hibit.dev) isn't just a blog; it's your go-to space for everything related to development, IT, and the wonders of electronics. Designed for developers, IT enthusiasts, and electronics hobby lovers, HiBit is a dynamic hub that keeps you in the loop with fresh and engaging content.  
+
+Explore a collection of articles, tutorials, and insights, encouraging a lively community where reading, commenting, discussing, and sharing experiences is not just promoted but celebrated.
 
 ## License
 The MIT License (MIT). Please see [License File](LICENSE) for more information.
